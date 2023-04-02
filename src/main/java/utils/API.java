@@ -1,6 +1,7 @@
 package utils;
 
 import org.apache.commons.io.IOUtils;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -22,5 +23,15 @@ public class API {
             throw new RuntimeException(e);
         }
         return new JSONObject(json);
+    }
+
+    public JSONArray getJsonArray() {
+        String json = null;
+        try {
+            json = IOUtils.toString(url, Charset.forName("UTF-8"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return new JSONArray(json);
     }
 }
