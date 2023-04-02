@@ -1,4 +1,6 @@
+import org.json.JSONObject;
 import utils.API;
+import utils.Download;
 
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -15,7 +17,13 @@ public class Main {
         } catch (URISyntaxException | MalformedURLException e) {
             throw new RuntimeException(e);
         }
+        JSONObject json = astolforocks.getJson();
 
-        System.out.println(astolforocks.getJson().getInt("id"));
+        int id = json.getInt("id");
+        String type = json.getString("file_extension");
+
+        Download.image(id, type);
+        System.out.println(id + "\n" + type);
+
     }
 }
