@@ -6,12 +6,12 @@ public class Download {
     static boolean isFileExists = true;
 
     public static void image(String url, String path, String name, String type){
-//        NetworkingUtils.openLink(url);
-        setDone(false);
-        setFileExists(false);
         NetworkingUtils.download(url, path + "/" + name + "." + type);
+    }
 
-
+    public static void image(String url, String path){
+        NetworkingUtils.download(url, path);
+        System.out.println(path);
     }
 
     public static boolean isFileExists(){

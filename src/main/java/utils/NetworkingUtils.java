@@ -8,6 +8,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
+import static utils.Download.setDone;
+import static utils.Download.setFileExists;
+
 public class NetworkingUtils {
 
     public static void openLink(String link) {
@@ -19,12 +22,14 @@ public class NetworkingUtils {
     }
 
     public static void download(String link, String target) {
+        setDone(false);
+        setFileExists(false);
         try (InputStream in = new URL(link).openStream()) {
             Files.copy(in, Paths.get(target));
             System.out.println(link);
-            Download.setDone(true);
+            setDone(true);
             if (new File(target).exists())
-                Download.setFileExists(true);
+                setFileExists(true);
 
             complete(target);
         } catch (IOException e) {
