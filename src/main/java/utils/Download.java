@@ -2,8 +2,8 @@ package utils;
 
 public class Download {
 
-    public static void image(int id, String type){
-        String url = "https://astolfo.rocks/astolfo/" + id + "." + type;
-        NetworkingUtils.openLink(url);
+    public static void image(String url, String path, String name, String type){
+//        NetworkingUtils.openLink(url);
+        NetworkingUtils.download(url, path + "/" + name + "." + type);
     }
 }

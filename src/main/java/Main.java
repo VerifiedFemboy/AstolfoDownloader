@@ -1,11 +1,8 @@
-import apis.AstolfoRocks;
-
 public class Main {
-
 
     public static void main(String[] args){
 
-        AstolfoRocks.download();
+        System.out.println("Choose website do you want have a random image: \n[1] astolfo.rocks\n[2] waifu.pics");
 
     }
 }
