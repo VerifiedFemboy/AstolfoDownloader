@@ -21,8 +21,11 @@ public class WaifuPics {
         JSONObject json = waifupics.getJson();
 
         String imageUrl = json.getString("url");
+        String path = "D:\\Java Projects\\Baller\\";
+        String name = "waifu";
+        String type = "jpg";
 
-        Download.image(imageUrl);
+        Download.image(imageUrl, path, name, type);
         System.out.println(imageUrl);
     }
 }
