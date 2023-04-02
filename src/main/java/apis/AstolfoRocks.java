@@ -22,8 +22,11 @@ public class AstolfoRocks {
 
         int id = json.getInt("id");
         String type = json.getString("file_extension");
-
-        Download.image(id, type);
+        String url = "https://astolfo.rocks/astolfo/" + id + "." + type;
+        
+        String path = "D:\\Java Projects\\Baller\\";
+        
+        Download.image(url, path, String.valueOf(id), type);
         System.out.println(id + "\n" + type);
     }
 }
