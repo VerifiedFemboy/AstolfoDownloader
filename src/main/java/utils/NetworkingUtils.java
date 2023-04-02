@@ -47,9 +47,9 @@ public class NetworkingUtils {
             case "n":
                 break;
         }
-        System.out.println("Closing in 3 seconds");
+        System.out.println("Closing in 1 second");
         try {
-            Thread.sleep(3000);
+            Thread.sleep(1000);
             System.exit(1337);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);

@@ -1,4 +1,5 @@
 import apis.AstolfoRocks;
+import apis.NekosLife;
 import apis.WaifuPics;
 
 import java.util.Scanner;
@@ -6,7 +7,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args){
-        System.out.println("Choose website do you want have a random image: \n[1] astolfo.rocks\n[2] waifu.pics");
+        System.out.println("Choose website do you want have a random image: \n[1] astolfo.rocks\n[2] waifu.pics\n[3] nekos.life");
 
         Scanner scanner = new Scanner(System.in);
 
@@ -18,6 +19,9 @@ public class Main {
                 break;
             case "2":
                 WaifuPics.download();
+                break;
+            case "3":
+                NekosLife.download();
                 break;
         }
 
