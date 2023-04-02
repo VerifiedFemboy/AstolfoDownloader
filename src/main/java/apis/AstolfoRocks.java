@@ -28,6 +28,6 @@ public class AstolfoRocks {
         String path = "D:\\Java Projects\\Baller\\";
         
         Download.image(url, path, String.valueOf(id), type);
-        System.out.println(id + "\n" + type);
+        System.out.println(id + "\n" + type + "\nDownload Status: " + Download.isDone() + "\nImage Exist Status: " + Download.isFileExists());
     }
 }

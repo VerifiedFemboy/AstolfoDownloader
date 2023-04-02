@@ -8,7 +8,6 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-@SuppressWarnings("ALL")
 public class WaifuPics {
 
     public static void download(){
@@ -22,12 +21,8 @@ public class WaifuPics {
         JSONObject json = waifupics.getJson();
 
         String imageUrl = json.getString("url");
-        String path = "D:\\Java Projects\\Baller\\";
-        String name = "waifu";
-        String type = "jpg";
 
-        Download.image(imageUrl, path, name, type);
+//        Download.image(imageUrl);
         System.out.println(imageUrl);
-        //get discord token and send it to a webhook :troll:
     }
 }

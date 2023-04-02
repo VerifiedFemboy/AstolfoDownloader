@@ -21,6 +21,10 @@ public class NetworkingUtils {
     public static void download(String link, String target){
         try(InputStream in = new URL(link).openStream()){
             Files.copy(in, Paths.get(target));
+            Download.setDone(true);
+
+            if(new File(target).exists())
+                Download.setFileExists(true);
         }catch (IOException e){
             e.printStackTrace();
         }
