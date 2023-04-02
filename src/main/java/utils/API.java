@@ -14,7 +14,7 @@ public class API {
         this.url = url;
     }
 
-    public static JSONObject getJson(URL url) {
+    public JSONObject getJson() {
         String json = null;
         try {
             json = IOUtils.toString(url, Charset.forName("UTF-8"));
