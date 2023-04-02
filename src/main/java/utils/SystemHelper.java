@@ -7,15 +7,19 @@ import java.io.IOException;
 
 public class SystemHelper {
 
-    public static void setWallpaper(String image) throws IOException {
-        File wallpaper = new File(image);
-        Image img = ImageIO.read(wallpaper);
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    public static void setWallpaper(String image) {
+        try{
+            File wallpaper = new File(image);
+            Image img = ImageIO.read(wallpaper);
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-        // skalujemy obrazek do rozmiarow ekranu (zeby sie dobrze wygladalo)
-        Image resizedImg = img.getScaledInstance(screenSize.width, screenSize.height, Image.SCALE_SMOOTH);
+            // skalujemy obrazek do rozmiarow ekranu (zeby sie dobrze wygladalo)
+            Image resizedImg = img.getScaledInstance(screenSize.width, screenSize.height, Image.SCALE_SMOOTH);
 
-        // ustawiamy tapete
-        WallpaperSetter.set(resizedImg);
+            // ustawiamy tapete
+//            WallpaperSetter.set(resizedImg);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }

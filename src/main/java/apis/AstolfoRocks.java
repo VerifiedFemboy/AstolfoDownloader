@@ -3,7 +3,10 @@ package apis;
 import org.json.JSONObject;
 import utils.API;
 import utils.Download;
+import utils.FileChooser;
+import utils.PathUtils;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -24,10 +27,11 @@ public class AstolfoRocks {
         int id = json.getInt("id");
         String type = json.getString("file_extension");
         String url = "https://astolfo.rocks/astolfo/" + id + "." + type;
-        
-        String path = "D:\\Java Projects\\Baller\\";
-        
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.choosing();
+        String path = PathUtils.getPath();
         Download.image(url, path, String.valueOf(id), type);
+
 
     }
 }

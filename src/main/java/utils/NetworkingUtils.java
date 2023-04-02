@@ -1,6 +1,5 @@
 package utils;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.*;
 import java.net.URI;
@@ -22,6 +21,7 @@ public class NetworkingUtils {
     public static void download(String link, String target) {
         try (InputStream in = new URL(link).openStream()) {
             Files.copy(in, Paths.get(target));
+            System.out.println(link);
             Download.setDone(true);
             if (new File(target).exists())
                 Download.setFileExists(true);
@@ -41,6 +41,13 @@ public class NetworkingUtils {
                 break;
             case "n":
                 break;
+        }
+        System.out.println("Closing in 3 seconds");
+        try {
+            Thread.sleep(3000);
+            System.exit(1337);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 }

@@ -1,7 +1,5 @@
 package utils;
 
-import java.io.File;
-
 public class Download {
 
     static boolean isDone = true;
@@ -12,6 +10,7 @@ public class Download {
         setDone(false);
         setFileExists(false);
         NetworkingUtils.download(url, path + "/" + name + "." + type);
+
 
     }
 
