@@ -1,19 +1,31 @@
-<<<<<<< HEAD
-import apis.AstolfoRocks;
-import apis.WaifuPics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-=======
->>>>>>> b0f816097f0e72955fb5d1fff2c80dd8327ea0f9
 public class Main {
 
     public static void main(String[] args){
 
-<<<<<<< HEAD
-        AstolfoRocks.download();
-        WaifuPics.download();
-=======
         System.out.println("Choose website do you want have a random image: \n[1] astolfo.rocks\n[2] waifu.pics");
->>>>>>> b0f816097f0e72955fb5d1fff2c80dd8327ea0f9
 
+        new KeyListener(){
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                switch (e.getKeyCode()){
+                    case 1:
+                        break;
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        };
     }
 }
