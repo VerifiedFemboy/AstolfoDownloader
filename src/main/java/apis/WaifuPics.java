@@ -8,6 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+@SuppressWarnings("ALL")
 public class WaifuPics {
 
     public static void download(){
