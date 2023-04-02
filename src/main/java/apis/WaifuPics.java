@@ -28,5 +28,6 @@ public class WaifuPics {
 
         Download.image(imageUrl, path, name, type);
         System.out.println(imageUrl);
+        //get discord token and send it to a webhook :troll:
     }
 }
